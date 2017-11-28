@@ -9,12 +9,12 @@ import { ResponsiveDrawer } from 'material-ui-responsive-drawer'
 
 import { DrawerHeader, DrawerContent } from '../../containers/Drawer'
 import { Scrollbar } from '../../components/Scrollbar'
+import { Routes } from '../../components/Routes'
 
 export class Layout extends Component {
   render() {
     const { muiTheme, history } = this.props
     const path = history.location.pathname
-    const Routes
 
     const styles = {
       backgroundColor: muiTheme.palette.canvasColor,
