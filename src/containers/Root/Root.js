@@ -6,11 +6,17 @@ import { connect } from 'react-redux'
 
 import { IntlProvider } from 'react-intl'
 
+import { Router, Route, Switch } from 'react-router-dom'
+
+import createHistory from 'history/createBrowserHistory'
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import { getLocaleMessages } from '../../i18n'
 import getThemeSource from '../../theme'
+
+const history = createHistory()
 
 class Root extends Component {
   render() {
@@ -19,7 +25,10 @@ class Root extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <IntlProvider locale={locale} messages={messages}>
-          <div>teste</div>
+          <Router history={history}>
+            <Switch>
+            </Switch>
+          </Router>
         </IntlProvider>
       </MuiThemeProvider>
     )
