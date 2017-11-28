@@ -7,6 +7,7 @@
     "material-ui-responsive-drawer": "^1.19.2",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.1.1",
     "react-intl": "^2.4.0",
     "react-redux": "^5.0.6",

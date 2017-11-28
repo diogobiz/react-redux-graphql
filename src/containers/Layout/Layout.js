@@ -8,7 +8,7 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import { ResponsiveDrawer } from 'material-ui-responsive-drawer'
 
 import { DrawerHeader, DrawerContent } from '../../containers/Drawer'
-// import Scrollbar from '../../components/Scrollbar'
+import { Scrollbar } from '../../components/Scrollbar'
 // import getAppRoutes from '../../components/AppRoutes'
 
 export class Layout extends Component {
@@ -25,10 +25,10 @@ export class Layout extends Component {
     return (
       <div style={styles}>
         <ResponsiveDrawer width={260} responsiveDrawer>
-          {/* <Scrollbar> */}
-          <DrawerHeader />
-          <DrawerContent path={path} history={history} />
-          {/* </Scrollbar> */}
+          <Scrollbar>
+            <DrawerHeader />
+            <DrawerContent path={path} history={history} />
+          </Scrollbar>
         </ResponsiveDrawer>
 
         <Switch>
