@@ -1,4 +1,5 @@
 export default {
   counter: 0,
-  theme: 'dark'
+  theme: 'dark',
+  locale: 'en'
 }

@@ -6,6 +6,10 @@ import Root from './containers/Root'
 
 import configStore from './store'
 
+import locales, { addLocalizationData } from './i18n'
+
+addLocalizationData(locales)
+
 class App extends Component {
   render() {
     const store = configStore()
