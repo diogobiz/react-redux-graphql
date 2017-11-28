@@ -3,5 +3,6 @@ const counter = {
 }
 
 export default {
-  counter
+  counter,
+  theme: 'dark'
 }
