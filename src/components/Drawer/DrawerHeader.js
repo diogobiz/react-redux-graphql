@@ -27,10 +27,12 @@ const DrawerHeader = ({ muiTheme, intl }) => {
   return (
     <Paper zDepth={1} style={styles.paper}>
       <List>
+        <ListItem disabled primaryText={intl.formatMessage({ id: 'app_name' })} />
+
         <ListItem
           disabled
           leftAvatar={
-            <Avatar size={45} src="" alt="person" icon={<FontIcon className="material-icons">person</FontIcon>} />
+            <Avatar size={45} src="" alt={intl.formatMessage({ id: 'app_name' })} icon={<FontIcon className="material-icons">person</FontIcon>} />
           }
         />
 
@@ -47,10 +49,6 @@ const DrawerHeader = ({ muiTheme, intl }) => {
           onClick={() => console.log('click2')}
         />
       </List>
-
-      {/* <List>
-        <ListItem disabled primaryText={intl.formatMessage({ id: 'app_name' })} />
-      </List> */}
     </Paper>
   )
 }
