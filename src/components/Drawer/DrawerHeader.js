@@ -13,62 +13,44 @@ import Paper from 'material-ui/Paper'
 
 const DrawerHeader = ({ muiTheme, intl }) => {
   const styles = {
-    header: {
-      padding: 5
-    },
-    header_content: {
-      padding: 5
-    },
     paper: {
       backgroundColor: muiTheme.palette.primary2Color,
       color: muiTheme.palette.alternateTextColor,
       margin: 0,
       padding: 0
     },
-    icon: {
-      width: 48,
-      height: 48,
-      top: 4
+    item: {
+      backgroundColor: 'transparent'
     }
   }
 
   return (
     <Paper zDepth={1} style={styles.paper}>
-      {/* {auth.isAuthorised &&
-        <div>
-          <List>
-            <ListItem
-              disabled
-              leftAvatar={
-                <Avatar size={45} src={auth.photoURL} alt='person' icon={<FontIcon className='material-icons' >person</FontIcon>} />
-              }
-            />
-
-            <ListItem
-              primaryText={auth.displayName}
-              secondaryText={auth.email}
-              rightIconButton={
-                <IconButton onClick={() => { setDialogIsOpen('auth_menu', !dialogs.auth_menu) }}>
-                  <FontIcon className='material-icons' >{dialogs.auth_menu ? 'arrow_drop_up' : 'arrow_drop_down'}</FontIcon>
-                </IconButton>
-              }
-              disableFocusRipple
-              style={{ backgroundColor: 'transparent' }}
-              onClick={() => { setDialogIsOpen('auth_menu', !dialogs.auth_menu) }}
-            />
-          </List>
-        </div>
-      }
-
-      {!auth.isAuthorised && */}
       <List>
         <ListItem
           disabled
-          primaryText={intl.formatMessage({ id: 'app_name' })}
-        // leftAvatar={<AppIcon color={muiTheme.palette.accent1Color} style={styles.icon} />}
+          leftAvatar={
+            <Avatar size={45} src="" alt="person" icon={<FontIcon className="material-icons">person</FontIcon>} />
+          }
+        />
+
+        <ListItem
+          primaryText="Munir Ahmed"
+          secondaryText="elsangedy@gmail.com"
+          rightIconButton={
+            <IconButton onClick={() => console.log('click')}>
+              <FontIcon className='material-icons'>arrow_drop_down</FontIcon>
+            </IconButton>
+          }
+          disableFocusRipple
+          style={styles.item}
+          onClick={() => console.log('click2')}
         />
       </List>
-      {/* } */}
+
+      {/* <List>
+        <ListItem disabled primaryText={intl.formatMessage({ id: 'app_name' })} />
+      </List> */}
     </Paper>
   )
 }
