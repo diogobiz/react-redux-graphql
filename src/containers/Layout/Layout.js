@@ -11,18 +11,15 @@ import { DrawerHeader, DrawerContent } from '../../containers/Drawer'
 import { Scrollbar } from '../../components/Scrollbar'
 import { Routes } from '../../components/Routes'
 
+import { Auxiliary } from '../../hoc/Auxiliary'
+
 export class Layout extends Component {
   render() {
     const { muiTheme, history } = this.props
     const path = history.location.pathname
 
-    const styles = {
-      backgroundColor: muiTheme.palette.canvasColor,
-      height: '100%'
-    }
-
     return (
-      <div style={styles}>
+      <Auxiliary>
         <ResponsiveDrawer width={260} responsiveDrawer>
           <Scrollbar>
             <DrawerHeader />
@@ -33,7 +30,7 @@ export class Layout extends Component {
         <Switch>
           {Routes.map((Route, i) => React.cloneElement(Route, { key: `@routes/${i}` }))}
         </Switch>
-      </div>
+      </Auxiliary>
     )
   }
 }
