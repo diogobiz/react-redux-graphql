@@ -1,7 +1,7 @@
 import * as actionTypes from './types'
 
 const updateTheme = (theme) => ({
-  type: actionTypes.INCREMENT,
+  type: actionTypes.UPDATE_THEME,
   payload: theme
 })
 

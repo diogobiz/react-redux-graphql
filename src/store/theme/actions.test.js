@@ -6,7 +6,7 @@ describe('Theme actions', () => {
     expect(
       actions.updateTheme('light')
     ).toEqual({
-      type: actionTypes.INCREMENT,
+      type: actionTypes.UPDATE_THEME,
       payload: 'light'
     })
   })
