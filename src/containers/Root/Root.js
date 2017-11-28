@@ -16,6 +16,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import { getLocaleMessages } from '../../i18n'
 import getThemeSource from '../../theme'
 
+import { Layout } from '../Layout'
+
 const history = createHistory()
 
 class Root extends Component {
@@ -27,6 +29,7 @@ class Root extends Component {
         <IntlProvider locale={locale} messages={messages}>
           <Router history={history}>
             <Switch>
+              <Route children={(props) => <Layout {...props} />} />
             </Switch>
           </Router>
         </IntlProvider>
