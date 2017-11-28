@@ -9,13 +9,12 @@ import { ResponsiveDrawer } from 'material-ui-responsive-drawer'
 
 import { DrawerHeader, DrawerContent } from '../../containers/Drawer'
 import { Scrollbar } from '../../components/Scrollbar'
-// import getAppRoutes from '../../components/AppRoutes'
 
 export class Layout extends Component {
   render() {
     const { muiTheme, history } = this.props
     const path = history.location.pathname
-    const routes = []//getAppRoutes()
+    const Routes
 
     const styles = {
       backgroundColor: muiTheme.palette.canvasColor,
@@ -32,7 +31,7 @@ export class Layout extends Component {
         </ResponsiveDrawer>
 
         <Switch>
-          {routes.map((Route, i) => React.cloneElement(Route, { key: `@routes/${i}` }))}
+          {Routes.map((Route, i) => React.cloneElement(Route, { key: `@routes/${i}` }))}
         </Switch>
       </div>
     )
