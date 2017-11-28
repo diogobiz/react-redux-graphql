@@ -1,8 +1,4 @@
-const counter = {
-  value: 0
-}
-
 export default {
-  counter,
+  counter: 0,
   theme: 'dark'
 }

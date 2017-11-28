@@ -1,12 +1,12 @@
 import * as actionTypes from './types'
 
-export default (state = { value: 0 }, action) => {
+export default (state = 0, action) => {
   switch (action.type) {
     case actionTypes.INCREMENT:
-      return ++state.value
+      return ++state
 
     case actionTypes.DECREMENT:
-      return --state.value
+      return --state
 
     default:
       return state
