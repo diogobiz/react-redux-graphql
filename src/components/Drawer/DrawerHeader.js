@@ -20,14 +20,15 @@ const DrawerHeader = ({ muiTheme, intl }) => {
       padding: 0
     },
     item: {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
+      marginTop: '20px'
     }
   }
 
   return (
     <Paper zDepth={1} style={styles.paper}>
       <List>
-        <ListItem disabled primaryText={intl.formatMessage({ id: 'app_name' })} />
+        {/* <ListItem disabled primaryText={intl.formatMessage({ id: 'app_name' })} /> */}
 
         <ListItem
           disabled
