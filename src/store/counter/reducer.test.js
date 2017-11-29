@@ -1,7 +1,7 @@
 import reducer from './reducer'
 import * as actionTypes from './types'
 
-describe('Counter reducer', () => {
+describe('[store] Counter reducer', () => {
   it('should return the initial state', () => {
     expect(
       reducer(undefined, {})

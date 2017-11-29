@@ -4,7 +4,7 @@ import en_messages from './en'
 
 import en from 'react-intl/locale-data/en'
 
-const locales = [
+export const locales = [
   {
     locale: 'en',
     messages: en_messages,
@@ -12,17 +12,10 @@ const locales = [
   }
 ]
 
-export const getLocaleMessages = (localeId) => {
-  const locale = locales.find((l) => l.locale === localeId)
+export const getLocale = (localeId) => locales.find((l) => l.locale === localeId) || locales[0]
 
-  return !!locale ? locale.messages : en_messages
-}
+export const getLocaleMessages = (localeId) => getLocale(localeId).messages
 
-export const addLocalizationData = (ls) => {
-  ls.map((l) => {
-    addLocaleData(l.data)
-    return l
-  })
-}
+export const addLocalizationData = (locales) => locales.forEach((locale) => addLocaleData(locale.data))
 
 export default locales

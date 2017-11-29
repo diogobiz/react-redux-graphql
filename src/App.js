@@ -10,10 +10,10 @@ import locales, { addLocalizationData } from './i18n'
 
 addLocalizationData(locales)
 
+const store = configStore()
+
 class App extends Component {
   render() {
-    const store = configStore()
-
     return (
       <Provider store={store}>
         <Root />

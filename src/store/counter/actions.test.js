@@ -1,7 +1,7 @@
 import actions from './actions'
 import * as actionTypes from './types'
 
-describe('Counter actions', () => {
+describe('[store] Counter actions', () => {
   it('should return increment action', () => {
     expect(
       actions.increment()

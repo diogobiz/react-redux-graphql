@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Route } from 'react-router-dom'
 
-import asyncComponent from '../../hoc/asyncComponent/asyncComponent'
+import { asyncComponent } from '../../hoc/asyncComponent'
 
 import { RestrictedRoute } from '../../containers/RestrictedRoute'
 

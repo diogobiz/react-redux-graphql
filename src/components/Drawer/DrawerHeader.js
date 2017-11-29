@@ -11,7 +11,9 @@ import List from 'material-ui/List/List'
 import ListItem from 'material-ui/List/ListItem'
 import Paper from 'material-ui/Paper'
 
-const DrawerHeader = ({ muiTheme, intl }) => {
+const DrawerHeader = (props) => {
+  const { muiTheme, intl } = props
+
   const styles = {
     paper: {
       backgroundColor: muiTheme.palette.primary2Color,

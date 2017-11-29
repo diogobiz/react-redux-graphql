@@ -3,19 +3,17 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
 export const themes = [
   {
-    id: 'light',
-    source: lightBaseTheme
-  },
-  {
     id: 'dark',
     source: darkBaseTheme
+  },
+  {
+    id: 'light',
+    source: lightBaseTheme
   }
 ]
 
-const getThemeSource = (themeId) => {
-  const theme = themes.find((t) => t.id === themeId)
+export const getTheme = (themeId) => themes.find((theme) => theme.id === themeId) || themes[0]
 
-  return !!theme ? theme.source : darkBaseTheme
-}
+export const getThemeSource = (themeId) => getTheme(themeId).source
 
 export default getThemeSource
