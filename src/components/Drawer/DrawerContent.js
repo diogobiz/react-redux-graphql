@@ -26,14 +26,9 @@ const DrawerContent = ({ match, history, close }) => {
 
   const items = [
     {
-      value: '/menu-one',
-      primaryText: 'Menu One',
-      leftIcon: <FontIcon className='material-icons'>account_box</FontIcon>
-    },
-    {
-      value: '/menu-tow',
-      primaryText: 'Menu Two',
-      leftIcon: <FontIcon className='material-icons'>lock</FontIcon>
+      value: '/counter',
+      primaryText: 'Counter',
+      leftIcon: <FontIcon className='material-icons'>add</FontIcon>
     }
   ]
 
