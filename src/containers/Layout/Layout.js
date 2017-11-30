@@ -13,26 +13,11 @@ import { Routes } from '../../components/Routes'
 
 import { Auxiliary } from '../../hoc/Auxiliary'
 
+import appActions from '../../store/app/actions'
+
 export class Layout extends Component {
-  state = {
-    drawerOpened: false
-  }
-
-  openDrawer() {
-    this.setState({
-      drawerOpened: true
-    })
-  }
-
-  closeDrawer() {
-    this.setState({
-      drawerOpened: false
-    })
-  }
-
   render() {
-    const { drawerOpened } = this.state
-    const { history } = this.props
+    const { history, drawerOpen, toggleDrawer } = this.props
     const path = history.location.pathname
 
     return (
@@ -40,15 +25,13 @@ export class Layout extends Component {
         <Drawer
           docked={false}
           width={260}
-          open={drawerOpened}
-          onRequestChange={this.closeDrawer.bind(this)}>
+          open={drawerOpen}
+          onRequestChange={toggleDrawer}>
           <Scrollbar>
             <DrawerHeader />
-            <DrawerContent path={path} history={history} close={this.closeDrawer.bind(this)} />
+            <DrawerContent path={path} history={history} close={toggleDrawer} />
           </Scrollbar>
         </Drawer>
-
-        <button onClick={this.openDrawer.bind(this)}>TOGGLE</button>
 
         <Switch>
           {Routes.map((Route, i) => React.cloneElement(Route, { key: `@routes/${i}` }))}
@@ -59,11 +42,16 @@ export class Layout extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { theme } = state
+  const { theme, app: { drawerOpen } } = state
 
   return {
-    theme
+    theme,
+    drawerOpen
   }
 }
 
-export default connect(mapStateToProps)(muiThemeable()(withRouter(Layout)))
+const mapDispatchToProps = (dispatch) => ({
+  toggleDrawer: () => dispatch(appActions.toggleDrawer())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(muiThemeable()(withRouter(Layout)))
