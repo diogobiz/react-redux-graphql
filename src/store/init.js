@@ -1,5 +1,8 @@
 export default {
   counter: 0,
-  theme: 'dark',
-  locale: 'en'
+  theme: 'light',
+  locale: 'en',
+  app: {
+    drawerOpen: false
+  }
 }
