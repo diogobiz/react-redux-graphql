@@ -6,17 +6,11 @@ import { asyncComponent } from '../../hoc/asyncComponent'
 
 import { RestrictedRoute } from '../../containers/RestrictedRoute'
 
-// const asyncApp = asyncComponent(() => import('../../containers/App/App'))
-// const asyncLogin = asyncComponent(() => import('../../containers/Auth/Login'))
-// const asyncLogout = asyncComponent(() => import('../../containers/Auth/Logout'))
-// const asyncCounter = asyncComponent(() => import('../../containers/Counter/Counter'))
+const asyncCounter = asyncComponent(() => import('../../containers/Counter/Counter'))
 const asyncPageNotFound = asyncComponent(() => import('../PageNotFound/PageNotFound'))
 
 const Routes = [
-  // <RestrictedRoute type="private" path="/" exact component={asyncApp} />,
-  // <RestrictedRoute type="private" path="/counter" exact component={asyncCounter} />,
-  // <RestrictedRoute type="private" path="/logout" exact component={asyncLogout} />,
-  // <RestrictedRoute type="public" path="/login" exact key="appRoute@/signin" component={asyncLogin} />,
+  <RestrictedRoute type="private" path="/counter" exact component={asyncCounter} />,
   <Route component={asyncPageNotFound} />
 ]
 
