@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql'
 
-const url = 'http://pokeapi.co/api/v2/pokemon/'
+const getUrl = (id) => `http://pokeapi.co/api/v2/pokemon/${id}/`
 const getImage = (id) => `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
 const PokemonType = new GraphQLObjectType({
@@ -16,7 +16,7 @@ const PokemonType = new GraphQLObjectType({
     },
     url: {
       type: GraphQLString,
-      resolve: (res) => res.url || (url + res.id)
+      resolve: (res) => res.url || getUrl(res.id)
     },
     image: {
       type: GraphQLString,
