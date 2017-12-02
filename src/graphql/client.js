@@ -3,13 +3,14 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:4000/',
-  credentials: 'same-origin'
+  uri: 'http://localhost:4000/'
 })
+
+const inMemoryCache = new InMemoryCache().restore(window.__APOLLO_STATE__)
 
 const configApolloClient = () => new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache().restore(window.__APOLLO_STATE__)
+  cache: inMemoryCache
 })
 
 export default configApolloClient
