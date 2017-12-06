@@ -33,6 +33,10 @@ class TodoList extends Component {
     lastTodo: null
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state !== nextState
+  }
+
   add() {
     const title = prompt('Enter some text')
 

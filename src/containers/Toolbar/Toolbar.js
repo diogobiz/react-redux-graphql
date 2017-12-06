@@ -7,6 +7,10 @@ import AppBar from 'material-ui/AppBar'
 import appActions from '../../store/app/actions'
 
 class Toolbar extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return false
+  }
+
   render() {
     const { title, toggleDrawer } = this.props
 
