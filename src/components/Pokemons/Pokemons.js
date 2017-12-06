@@ -11,33 +11,31 @@ import { Scrollbar } from '../Scrollbar'
 
 import { Toolbar } from '../../containers/Toolbar'
 
-const Pokemons = ({ pokemons: { loading, error, pokemons } }) => {
-  return (
-    <Scrollbar>
-      <Toolbar title="Pokemons" />
+const Pokemons = ({ pokemons: { loading, error, pokemons } }) => (
+  <Scrollbar>
+    <Toolbar title="Pokemons" />
 
-      <Subheader>Pokemons</Subheader>
+    <Subheader>Pokemons</Subheader>
 
-      <Divider />
+    <Divider />
 
-      {loading &&
-        <CircularProgress mode="indeterminate" style={{ margin: '20px auto', display: 'block' }} />}
+    {loading &&
+      <CircularProgress mode="indeterminate" style={{ margin: '20px auto', display: 'block' }} />}
 
-      {pokemons &&
-        <GridList
-          cellHeight={180}>
-          {pokemons.map((pokemon) => (
-            <GridTile
-              key={pokemon.id}
-              title={pokemon.name}
-              subtitle={<span>{pokemon.url}</span>}
-              actionIcon={<IconButton><StarBorder color="white" /></IconButton>}>
-              <img src={pokemon.image} alt={pokemon.name} />
-            </GridTile>
-          ))}
-        </GridList>}
-    </Scrollbar>
-  )
-}
+    {pokemons &&
+      <GridList
+        cellHeight={180}>
+        {pokemons.map((pokemon) => (
+          <GridTile
+            key={pokemon.id}
+            title={pokemon.name}
+            subtitle={<span>{pokemon.url}</span>}
+            actionIcon={<IconButton><StarBorder color="white" /></IconButton>}>
+            <img src={pokemon.image} alt={pokemon.name} />
+          </GridTile>
+        ))}
+      </GridList>}
+  </Scrollbar>
+)
 
 export default Pokemons
