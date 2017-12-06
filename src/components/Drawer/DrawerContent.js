@@ -29,6 +29,16 @@ const DrawerContent = ({ match, history, close }) => {
       value: '/counter',
       primaryText: 'Counter',
       leftIcon: <FontIcon className='material-icons'>add</FontIcon>
+    },
+    {
+      value: '/pokemons',
+      primaryText: 'Pokemons',
+      leftIcon: <FontIcon className='material-icons'>add</FontIcon>
+    },
+    {
+      value: '/todo-list',
+      primaryText: 'Todo List',
+      leftIcon: <FontIcon className='material-icons'>add</FontIcon>
     }
   ]
 

@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
-import { withRouter, Switch } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import Drawer from 'material-ui/Drawer'
 
-import { DrawerHeader, DrawerContent } from '../../containers/Drawer'
+import { DrawerHeader, DrawerContent } from '../Drawer'
+
 import { Scrollbar } from '../../components/Scrollbar'
 import { Routes } from '../../components/Routes'
 
@@ -54,4 +55,4 @@ const mapDispatchToProps = (dispatch) => ({
   toggleDrawer: () => dispatch(appActions.toggleDrawer())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(muiThemeable()(withRouter(Layout)))
+export default connect(mapStateToProps, mapDispatchToProps)(muiThemeable()(Layout))
